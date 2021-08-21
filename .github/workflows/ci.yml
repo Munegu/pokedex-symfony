@@ -1,0 +1,38 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+          tools: composer, php-cs-fixer, phpstan, phpunit, psalm, symfony-cli
+
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: PHPUnit tests
+        uses: php-actions/phpunit@v3
+        with:
+            php_version: latest
+
+      - name: PHPStan
+        uses: docker://oskarstark/phpstan-ga
+        with:
+          args: analyse src/
+
+      - uses: actions/checkout@v2
+      - name: PHP-CS-Fixer
+        uses: docker://oskarstark/php-cs-fixer-ga
+
+      - name: Psalm – Static Analysis for PHP
+        uses: psalm/psalm-github-actions@1.1.2
+

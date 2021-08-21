@@ -1,0 +1,2 @@
+global:
+  resource: 'routes/routing.yaml'
