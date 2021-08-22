@@ -1,3 +1,15 @@
 homepage:
   path: /
   controller: App\UserInterface\Controller\HomePageController
+
+pokedex:
+  path: /pokedex
+  controller: App\UserInterface\Controller\PokedexController
+
+games:
+  path: /games
+  controller: App\UserInterface\Controller\GamesController
+
+about_us:
+  path: /about-us
+  controller: App\UserInterface\Controller\AboutUsController
