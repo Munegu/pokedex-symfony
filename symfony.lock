@@ -41,9 +41,6 @@
     "doctrine/common": {
         "version": "3.1.2"
     },
-    "doctrine/dbal": {
-        "version": "2.13.2"
-    },
     "doctrine/deprecations": {
         "version": "v0.5.3"
     },
@@ -90,9 +87,6 @@
     },
     "doctrine/migrations": {
         "version": "3.2.0"
-    },
-    "doctrine/orm": {
-        "version": "2.9.3"
     },
     "doctrine/persistence": {
         "version": "2.2.1"
@@ -709,8 +703,5 @@
     },
     "webmozart/path-util": {
         "version": "2.3.0"
-    },
-    "weirdan/doctrine-psalm-plugin": {
-        "version": "1.0.0"
     }
 }
