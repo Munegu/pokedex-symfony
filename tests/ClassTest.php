@@ -9,7 +9,7 @@ use PHPUnit\Framework\ExpectationFailedException;
 class ClassTest extends TestCase
 {
     /**
-     * @throws ExpectationFailedException | \InvalidArgumentException
+     * @throws ExpectationFailedException|\InvalidArgumentException
      */
     public function testAssertTrue(): void
     {
