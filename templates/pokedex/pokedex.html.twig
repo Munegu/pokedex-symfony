@@ -5,6 +5,11 @@
 {% block body %}
 <div class="container">
     <h1 class="text-center mb-4">Podédex</h1>
+    {% for generation in generations %}
+    <p>Id génération : {{ generation.numberGeneration }}</p>
+    <p>Nom génération : {{ generation.name }}</p>
+        <br/>
+    {% endfor %}
 </div>
 
 {% endblock %}
