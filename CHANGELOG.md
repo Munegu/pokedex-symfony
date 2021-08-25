@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Added
+- generations of Pokemons
 - init project
 - add ci
 

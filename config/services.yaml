@@ -6,6 +6,34 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: false # Automatically registers your services as commands, event subscribers, etc.
 
+    #### APPLICATION ####
+
+    use_cases:
+        namespace: App\Core\Application\UseCase\
+        resource: '../src/Core/Application/UseCase/**/*UseCase*.php'
+
+    gateway_ports:
+        namespace: App\Core\Application\Port\Gateway\
+        resource: '../src/Core/Application/Port/Gateway/*Interface.php'
+
+
+    #### INFRASTRUCTURE ####
+
+    gateway_adapters:
+        namespace: App\Infrastructure\Gateway\
+        resource: '../src/Infrastructure/Gateway/*.php'
+
+
+    #### USER INTERFACE ####
+
+    views:
+        namespace: App\UserInterface\Presentation\
+        resource: '../src/UserInterface/Presentation/**/*View.php'
+
+    presenters:
+        namespace: App\UserInterface\Presentation\
+        resource: '../src/UserInterface/Presentation/**/*Presenter.php'
+
     controllers:
         namespace: App\UserInterface\Controller\
         resource: '../src/UserInterface/Controller/'
