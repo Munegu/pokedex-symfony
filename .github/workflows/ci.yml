@@ -10,6 +10,10 @@ jobs:
         os: [Ubuntu]
         php: [8.0]
 
+        include:
+          - os: Ubuntu
+            os-version: ubuntu-latest
+
     runs-on: ubuntu-latest
 
 
