@@ -37,3 +37,5 @@ jobs:
 
       - name: Psalm – Static Analysis for PHP
         uses: docker://vimeo/psalm-github-actions:3.14.2
+        with:
+          composer_ignore_platform_reqs: true
