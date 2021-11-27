@@ -35,5 +35,5 @@ jobs:
         uses: docker://oskarstark/php-cs-fixer-ga
 
       - name: Psalm – Static Analysis for PHP
-        uses: docker://vimeo/psalm-github-actions
+        run: ./vendor/bin/psalm --report=var/psalm/junit.xml
 
