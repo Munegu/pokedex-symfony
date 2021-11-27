@@ -35,5 +35,5 @@ jobs:
         uses: docker://oskarstark/php-cs-fixer-ga
 
       - name: Psalm – Static Analysis for PHP
-        uses: psalm/psalm-github-actions@1.1.2
+        uses: docker://vimeo/psalm-github-actions
 
