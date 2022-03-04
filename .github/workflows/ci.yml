@@ -27,7 +27,7 @@ jobs:
             php_version: latest
 
       - name: PHPStan
-        uses: docker://oskarstark/phpstan-ga
+        uses: php-actions/phpstan@v3
         with:
           args: analyse src/
 
