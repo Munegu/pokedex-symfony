@@ -30,7 +30,7 @@ jobs:
         uses: php-actions/phpstan@v3
         with:
           path: src/
-          level: 0
+          level: 1
           php_version: 8.0
 
       - uses: actions/checkout@v2
