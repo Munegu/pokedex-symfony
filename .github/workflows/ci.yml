@@ -29,7 +29,7 @@ jobs:
       - name: PHPStan
         uses: php-actions/phpstan@v3
         with:
-          args: analyse src/
+          path: src/
 
       - uses: actions/checkout@v2
       - name: PHP-CS-Fixer
