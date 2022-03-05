@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
-use UnexpectedValueException;
 
 class PokedexController extends AbstractController
 {
@@ -20,7 +19,6 @@ class PokedexController extends AbstractController
      * @throws RuntimeError
      * @throws SyntaxError
      * @throws InvalidArgumentException
-     * @throws UnexpectedValueException
      */
     public function __invoke(
         GetGenerationUseCaseInterface $useCase,

@@ -8,7 +8,6 @@ use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
-use UnexpectedValueException;
 
 class GetGenerationsHtmlView
 {
@@ -22,7 +21,6 @@ class GetGenerationsHtmlView
      * @throws RuntimeError
      * @throws SyntaxError
      * @throws InvalidArgumentException
-     * @throws UnexpectedValueException
      */
     public function generateView(GetGenerationsHtmlViewModel $viewModel): Response
     {
