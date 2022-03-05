@@ -40,7 +40,6 @@ class GetGenerationsUseCaseTest extends TestCase implements GetGenerationsPresen
         $useCase = new GetGenerationsUseCase($this->gateway);
         $useCase->execute($this);
 
-        $this->assertEquals($this->fakeGenerations, []);
-//        $this->assertEquals($this->fakeGenerations, $this->response->generations);
+        $this->assertEquals($this->fakeGenerations, $this->response->generations);
     }
 }

@@ -24,13 +24,10 @@ jobs:
       - name: Tests
         run: php bin/phpunit
 
+      - name: PHPStan
+        run: vendor/bin/phpstan analyse src
 
-      #      - name: PHPUnit tests
-#        uses: php-actions/phpunit@v2
-#        with:
-#            php_version: latest
-
-#      - name: PHPStan
+      #      - name: PHPStan
 #        uses: php-actions/phpstan@v3
 #        with:
 #          php_version: 8.0
