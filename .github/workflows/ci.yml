@@ -21,17 +21,20 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
-      - name: PHPUnit tests
-        uses: php-actions/phpunit@v2
-        with:
-            php_version: latest
+      - name: Tests
+        run: php bin/phpunit
+
+
+      #      - name: PHPUnit tests
+#        uses: php-actions/phpunit@v2
+#        with:
+#            php_version: latest
 
 #      - name: PHPStan
 #        uses: php-actions/phpstan@v3
 #        with:
 #          php_version: 8.0
 
-      - uses: actions/checkout@v2
       - name: PHP-CS-Fixer
         uses: docker://oskarstark/php-cs-fixer-ga
 
