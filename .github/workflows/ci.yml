@@ -27,13 +27,11 @@ jobs:
       - name: PHPStan
         run: vendor/bin/phpstan analyse src
 
-      #      - name: PHPStan
-#        uses: php-actions/phpstan@v3
-#        with:
-#          php_version: 8.0
-
       - name: PHP-CS-Fixer
         uses: docker://oskarstark/php-cs-fixer-ga
+
+      - name: Psalm
+        run: vendor/bin/psalm --report=var/psalm/junit.xml
 
 #      - name: Psalm – Static Analysis for PHP
 #        uses: docker://vimeo/psalm-github-actions
