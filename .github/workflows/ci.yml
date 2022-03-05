@@ -29,7 +29,6 @@ jobs:
       - name: PHPStan
         uses: php-actions/phpstan@v3
         with:
-          command: phpstan analyse src
           php_version: 8.0
 
       - uses: actions/checkout@v2
