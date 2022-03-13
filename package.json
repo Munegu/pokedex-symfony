@@ -19,7 +19,7 @@
         "eslint-plugin-react": "^7.22.0",
         "bootstrap": "^4.6.0"
     },
-    "license": "UNLICENSED",
+    "license": "NVILLETELLE",
     "private": true,
     "scripts": {
         "dev-server": "encore dev-server",
