@@ -15,10 +15,12 @@ class GetGenerationsHtmlPresenter implements GetGenerationsPresenterInferface
 
         foreach ($response->generations as $generation) {
             $this->viewModel->generations[] = [
-                'numberGeneration' => $generation->getNumberGeneration(),
                 'name' => $generation->getName(),
+                'url' => $generation->getUrl(),
             ];
         }
+
+        $this->viewModel->errors = $response->errors;
     }
 
     public function getViewModel(): GetGenerationsHtmlViewModel

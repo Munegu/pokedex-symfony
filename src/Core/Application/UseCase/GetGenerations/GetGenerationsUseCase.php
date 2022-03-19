@@ -2,6 +2,7 @@
 
 namespace App\Core\Application\UseCase\GetGenerations;
 
+use App\Core\Application\Port\Exception\InfrastructureExceptionInterface;
 use App\Core\Application\Port\Gateway\GenerationGatewayInterface;
 
 class GetGenerationsUseCase implements GetGenerationUseCaseInterface
@@ -15,7 +16,11 @@ class GetGenerationsUseCase implements GetGenerationUseCaseInterface
     {
         $response = new GetGenerationsResponse();
 
-        $response->generations = $this->gateway->getGenerations();
+        try {
+            $response->generations = $this->gateway->getGenerations();
+        } catch (InfrastructureExceptionInterface $e) {
+            $response->errors[] = $e->getMessage();
+        }
 
         $presenter->present($response);
     }

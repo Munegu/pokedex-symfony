@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Erreur {% endblock %}
+
+{% block body %}
+    <h1>Page non trouvée</h1>
+
+    <p>
+        Erreur lors du chargement de la page.
+        <a href="{{ path('homepage') }}">Retour à l'accueil</a>.
+    </p>
+{% endblock %}
+
