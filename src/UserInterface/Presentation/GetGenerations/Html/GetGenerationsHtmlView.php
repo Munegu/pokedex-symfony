@@ -25,10 +25,16 @@ class GetGenerationsHtmlView
     public function generateView(GetGenerationsHtmlViewModel $viewModel): Response
     {
         $response = new Response();
-        $response->setStatusCode($viewModel->httpCode);
-        $response->setContent($this->twig->render('pokedex/pokedex.html.twig', [
+
+        if (0 !== count($viewModel->errors)) {
+            $response->setStatusCode($viewModel->httpErrorCode);
+            $response->setContent($this->twig->render('TwigBundle/Exception/error.hml.twig'));
+        } else {
+            $response->setStatusCode($viewModel->httpCode);
+            $response->setContent($this->twig->render('pokedex/pokedex.html.twig', [
             'generations' => $viewModel->generations,
         ]));
+        }
 
         return $response;
     }

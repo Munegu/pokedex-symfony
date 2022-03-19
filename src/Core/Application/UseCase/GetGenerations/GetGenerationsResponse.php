@@ -8,9 +8,11 @@ class GetGenerationsResponse
 {
     /**
      * @param Generation[] $generations
+     * @param string[]     $errors
      */
     public function __construct(
-        public array $generations = []
+        public array $generations = [],
+        public array $errors = []
     ) {
     }
 }

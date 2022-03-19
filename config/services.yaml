@@ -5,6 +5,9 @@ services:
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: false # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $host: '%env(HOST_API)%'
+
 
     #### APPLICATION ####
 
@@ -23,6 +26,13 @@ services:
         namespace: App\Infrastructure\Gateway\
         resource: '../src/Infrastructure/Gateway/*.php'
 
+    gateway_collectors:
+        namespace: App\Infrastructure\DataCollector\
+        resource: '../src/Infrastructure/DataCollector/*.php'
+
+    gateway_services:
+        namespace: App\Infrastructure\Service\
+        resource: '../src/Infrastructure/Service/*.php'
 
     #### USER INTERFACE ####
 

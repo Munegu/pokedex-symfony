@@ -4,34 +4,23 @@ namespace App\Infrastructure\Gateway;
 
 use App\Core\Application\Port\Gateway\GenerationGatewayInterface;
 use App\Core\Domain\Generation;
+use App\Infrastructure\DataCollector\GenerationCollector;
+use App\UserInterface\Exception\InfrastructureException;
 
 class GenerationGateway implements GenerationGatewayInterface
 {
-    private const GENERATIONS = [
-        [
-            'number' => 1,
-            'name' => 'Première génération',
-        ],
-        [
-            'number' => 2,
-            'name' => 'Deuxième génération',
-        ],
-    ];
+    public function __construct(
+        private GenerationCollector $generationCollector
+    ) {
+    }
 
     /**
+     * @throws InfrastructureException
+     *
      * @return Generation[]
      */
     public function getGenerations(): array
     {
-        $generations = [];
-
-        foreach (self::GENERATIONS as $generation) {
-            $generations[] = new Generation(
-                numberGeneration: $generation['number'],
-                name: $generation['name']
-            );
-        }
-
-        return $generations;
+        return $this->generationCollector->getGenerations();
     }
 }
