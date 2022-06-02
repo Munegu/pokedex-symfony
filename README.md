@@ -1,5 +1,6 @@
 # Pokedex
 
+[![ci](https://github.com/Munegu/pokedex-symfony/actions/workflows/ci.yml/badge.svg)](https://github.com/Munegu/pokedex-symfony/actions/workflows/ci.yml)
 
 ## Welcome! 👋
 
