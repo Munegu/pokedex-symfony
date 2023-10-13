@@ -2,7 +2,6 @@
 
 namespace App\UserInterface\Presentation\GetGenerations\Html;
 
-use InvalidArgumentException;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 use Twig\Error\LoaderError;
@@ -20,7 +19,7 @@ class GetGenerationsHtmlView
      * @throws LoaderError
      * @throws RuntimeError
      * @throws SyntaxError
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     public function generateView(GetGenerationsHtmlViewModel $viewModel): Response
     {
