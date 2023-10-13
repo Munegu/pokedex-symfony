@@ -6,7 +6,6 @@ use App\Infrastructure\Dto\Generations;
 use App\Infrastructure\Service\AbstractService;
 use App\UserInterface\Exception\InfrastructureException;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use Throwable;
 
 class GenerationCollector extends AbstractService
 {
@@ -29,13 +28,13 @@ class GenerationCollector extends AbstractService
                     'GET',
                     sprintf('%s%s', $this->host, self::API_URL_GENERATION)
                 );
-        } catch (Throwable $e) {
+        } catch (\Throwable $e) {
             throw new InfrastructureException(message: sprintf('Error when retrieving generations: %s', $e->getMessage()));
         }
 
         try {
             $generations = $this->getSerializer()->deserialize($res->getContent(), Generations::class, 'json');
-        } catch (Throwable $e) {
+        } catch (\Throwable $e) {
             throw new InfrastructureException(message: sprintf('Error when deserializing generations: %s', $e->getMessage()));
         }
 

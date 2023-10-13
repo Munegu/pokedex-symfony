@@ -15,9 +15,9 @@ class GenerationGateway implements GenerationGatewayInterface
     }
 
     /**
-     * @throws InfrastructureException
-     *
      * @return Generation[]
+     *
+     * @throws InfrastructureException
      */
     public function getGenerations(): array
     {

@@ -8,9 +8,9 @@ use App\Core\Domain\Generation;
 interface GenerationGatewayInterface
 {
     /**
-     * @throws InfrastructureExceptionInterface
-     *
      * @return Generation[]
+     *
+     * @throws InfrastructureExceptionInterface
      */
     public function getGenerations(): array;
 }
