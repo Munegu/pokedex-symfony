@@ -16,6 +16,3 @@ vendor/bin/churn run
 php bin/phpunit
 XDEBUG_MODE=coverage php bin/phpunit --coverage-html=var/coverage
 ````
-
-test 
-
