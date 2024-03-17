@@ -14,7 +14,7 @@ jobs:
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.2
+          php-version: 8.3
           tools: composer, php-cs-fixer, phpstan, phpunit, psalm, symfony-cli
 
 
