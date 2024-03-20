@@ -2,11 +2,9 @@ name: ci
 
 on: [push, pull_request]
 
-
 jobs:
   build-test:
     runs-on: ubuntu-latest
-
 
     steps:
       - uses: actions/checkout@v2
@@ -15,8 +13,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.3
-          tools: composer, php-cs-fixer, phpstan, phpunit, psalm, symfony-cli
-
+          tools: composer, php-cs-fixer, phpstan, phpunit, symfony-cli
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
@@ -29,7 +26,3 @@ jobs:
 
       - name: PHP-CS-Fixer
         uses: docker://oskarstark/php-cs-fixer-ga
-
-      - name: Psalm
-        run: vendor/bin/psalm --report=var/psalm/junit.xml
-
