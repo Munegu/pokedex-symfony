@@ -46,5 +46,9 @@ services:
 
     controllers:
         namespace: App\UserInterface\Controller\
-        resource: '../src/UserInterface/Controller/'
-        tags: [ 'controller.service_arguments' ]
+        resource: '../src/UserInterface/Controller/*Controller.php'
+        tags: ['controller.service_arguments', 'container.service_subscriber']
+        public: true
+        calls:
+            -   method: setContainer
+                arguments: ['@Psr\Container\ContainerInterface']

@@ -19,13 +19,13 @@ class GetGenerationsUseCaseTest extends TestCase implements GetGenerationsPresen
     {
         $this->gateway = $this->createMock(GenerationGatewayInterface::class);
         $this->fakeGenerations = [
-          new Generation(
-              name: 'Génération test',
-              url: 'Url test 1'),
-          new Generation(
-              name: 'Génération Team Rocket',
-              url: 'Url test 1'
-          ),
+            new Generation(
+                name: 'Génération test',
+                url: 'Url test 1'),
+            new Generation(
+                name: 'Génération Team Rocket',
+                url: 'Url test 1'
+            ),
         ];
     }
 
