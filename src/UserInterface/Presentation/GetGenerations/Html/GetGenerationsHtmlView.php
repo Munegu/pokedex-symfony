@@ -31,8 +31,8 @@ class GetGenerationsHtmlView
         } else {
             $response->setStatusCode($viewModel->httpCode);
             $response->setContent($this->twig->render('pokedex/pokedex.html.twig', [
-            'generations' => $viewModel->generations,
-        ]));
+                'generations' => $viewModel->generations,
+            ]));
         }
 
         return $response;

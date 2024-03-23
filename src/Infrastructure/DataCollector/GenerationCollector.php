@@ -2,6 +2,7 @@
 
 namespace App\Infrastructure\DataCollector;
 
+use App\Core\Domain\Generation;
 use App\Infrastructure\Dto\Generations;
 use App\Infrastructure\Service\AbstractService;
 use App\UserInterface\Exception\InfrastructureException;
@@ -18,6 +19,8 @@ class GenerationCollector extends AbstractService
     }
 
     /**
+     * @return Generation[]
+     *
      * @throws InfrastructureException
      */
     public function getGenerations(): array
